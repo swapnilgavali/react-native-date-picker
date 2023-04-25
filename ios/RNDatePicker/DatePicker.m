@@ -76,6 +76,24 @@
     [self setValue:UIColorFromRGB(intColor) forKeyPath:@"textColor"];
 }
 
+- (void)setSelectedRowBackgroundColor:(NSString *)hexColor{
+    unsigned intColor = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexColor];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&intColor];
+    [[self.subviews objectAtIndex:0].subviews objectAtIndex:1].backgroundColor = UIColorFromRGB(intColor);
+}
+
+- (void)setSelectedRowBorderColor:(NSString *)hexColor{
+    unsigned intColor = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexColor];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&intColor];
+    UIView *view =  [[self.subviews objectAtIndex:0].subviews objectAtIndex:1];
+    view.layer.borderWidth = 1.5;
+    view.layer.borderColor = UIColorFromRGB(intColor).CGColor;
+}
+
 - (void)removeTodayString {
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Wundeclared-selector"
