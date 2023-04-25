@@ -55,6 +55,16 @@ RCT_CUSTOM_VIEW_PROPERTY(textColor, NSString, DatePicker)
     [view setTextColorProp:[RCTConvert NSString:json]];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(setSelectedRowBackgroundColor, NSString, DatePicker)
+{
+    [view setSelectedRowBackgroundColor:[RCTConvert NSString:json]];
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(setSelectedRowBorderColor, NSString, DatePicker)
+{
+    [view setSelectedRowBorderColor:[RCTConvert NSString:json]];
+}
+
 RCT_EXPORT_METHOD(openPicker:(NSDictionary *) props
                   onConfirm:(RCTResponseSenderBlock) onConfirm
                   onCancel:(RCTResponseSenderBlock) onCancel)
