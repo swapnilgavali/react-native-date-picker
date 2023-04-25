@@ -11,5 +11,9 @@
 
 - (void)setTextColorProp:(NSString *)hexColor;
 
+- (void)setSelectedRowBackgroundColor:(NSString *)hexColor;
+
+- (void)setSelectedRowBorderColor:(NSString *)hexColor;
+
 @end
 
